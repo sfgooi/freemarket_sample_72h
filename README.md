@@ -40,7 +40,8 @@ Things you may want to cover:
 ### Association
 - has_many :products dependent: :destroy
 - belongs_to :destination
-
+- has_many :cards dependent: :destroy
+- has_many :addresses dependent: :destroy
 
 ## productテーブル
 |Column|Type|Options|
@@ -75,14 +76,29 @@ Things you may want to cover:
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
+
+
+### Association
+- belongs_to :user
+- has_many :addresses dependent: :destroy
+
+
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false foreign_key: true|
 |post_code|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
-|building_name|string||
-|phone_number|string||
-### Assosiation
+|building_name|string|null: false|
+|phone_number|string|null: false|
+
+### Association
 - belongs_to :user
+- belongs_to :destination
+
 
 
 ## imageテーブル
@@ -90,7 +106,7 @@ Things you may want to cover:
 |------|----|-------|
 |image|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
-### Assosiation
+### Association
 - belongs_to :product
 
 
@@ -99,7 +115,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |ancestry|string||
-### Assosiation
+### Association
 - has_many :products dependent: :destroy
 
 
@@ -107,6 +123,16 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true|
-### Assosiation
+### Association
 - has_many :products dependent: :destroy
 
+
+## cardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+
+### Association
+- belongs_to :user
