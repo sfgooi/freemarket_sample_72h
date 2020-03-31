@@ -57,3 +57,6 @@ gem 'mysql2'
 gem 'active_hash'
 
 gem 'haml-rails'
+group :production do
+  gem 'unicorn', '5.4.1'
+end
