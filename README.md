@@ -39,7 +39,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :products
-- belongs_to :destination dependent: :destroy
+- belongs_to :destination
 
 
 ## productテーブル
