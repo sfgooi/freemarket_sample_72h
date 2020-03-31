@@ -38,7 +38,7 @@ Things you may want to cover:
 
 
 ### Association
-- has_many :products
+- has_many :products dependent: :destroy
 - belongs_to :destination
 
 
@@ -60,9 +60,9 @@ Things you may want to cover:
 
 
 ### Association
-- belongs_to :user dependent: :destroy
-- belongs_to :category dependent: :destroy
-- belongs_to :brand dependent: :destroy
+- belongs_to :user 
+- belongs_to :category
+- belongs_to :brand
 - has_many :images dependent: :destroy
 - belongs_to_active_hash :prefecture
 
@@ -100,13 +100,13 @@ Things you may want to cover:
 |name|string|null: false|
 |ancestry|string||
 ### Assosiation
-- belongs_to :products
+- has_many :products dependent: :destroy
 
 
-## brandsテーブル
+## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true|
 ### Assosiation
-- has_many :products
+- has_many :products dependent: :destroy
 
